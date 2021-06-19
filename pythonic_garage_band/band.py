@@ -23,54 +23,44 @@ class Band:
         return cls.instances
 
 class Musician:
-    pass
+    def __init__(self, name, type, instrument, solo):
+        self.name = name
+        self.type = type
+        self.instrument = instrument
+        self.solo = solo
 
+    def __str__(self):
+        return f"My name is {self.name} and I play {self.instrument}"
+
+    def __repr__(self):
+        return f"{self.type} instance. Name = {self.name}"
+
+    def get_instrument(self):
+        return f"{self.instrument}"
+
+    def play_solo(self):
+        return f"{self.solo}"
+    
 
 class Guitarist(Musician):
-    def __init__(self, name):
-        self.name = name
-
-    def __str__(self):
-        return f"My name is {self.name} and I play guitar"
     
-    def __repr__(self):
-        return f"Guitarist instance. Name = {self.name}"
+    def __init__(self, name):
 
-    def get_instrument(self):
-        return "guitar"
+        super().__init__(name, "Guitarist", "guitar", "face melting guitar solo")
 
-    def play_solo(self):
-        return "face melting guitar solo"
 
 class Bassist(Musician):
+    
+
     def __init__(self, name):
-        self.name = name
 
-    def __str__(self):
-        return f"My name is {self.name} and I play bass"
-
-    def __repr__(self):
-        return f"Bassist instance. Name = {self.name}"
-
-    def get_instrument(self):
-        return "bass"
-
-    def play_solo(self):
-        return "bom bom buh bom"
+        super().__init__(name, "Bassist", "bass", "bom bom buh bom")
+    
 
 class Drummer(Musician):
+    
     def __init__(self, name):
-        self.name = name
 
-    def __str__(self):
-        return f"My name is {self.name} and I play drums"
+        super().__init__(name, "Drummer", "drums", "rattle boom crash")
 
-    def __repr__(self):
-        return f"Drummer instance. Name = {self.name}"
-
-    def get_instrument(self):
-        return "drums"
-
-    def play_solo(self):
-        return "rattle boom crash"
     
